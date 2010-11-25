@@ -1,0 +1,16 @@
+application: voicechatroom
+version: 1
+runtime: python
+api_version: 1
+
+default_expiration: "4d 5h"
+
+skip_files:
+- ^js/closure-library
+
+handlers:
+- url: /js
+  static_dir: js
+
+- url: /.*
+  script: chatroom.py
