@@ -9,26 +9,28 @@
 
   <title>VoiceChatRoom</title>
   <style type="text/css">
-    .large_inputs{font-size: 18px; padding 5px 10px; font-weight: bold;}
-    #input_section{padding: 10px 20px;}
-    #input_section h1{float:right; padding: 0; margin: 0;}
-    .description{display:block; width: 100%; font-weight: bold; text-shadow: 1px 1px #EEE;}
-    #voice_input{width: 550px;}
-    .msg{display:block; 
-	clear: both; 
-	padding: 10px; 
-	margin: 10px; 
-	border-radius: 35px; 
-	background-color: #A4C639; 
-	-webkit-box-shadow: 1px 1px 4px #333; 
-	font-size: 3em; 
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A4C639), to(#A4C639), color-stop(.6,#FFF))}
-    .msg:nth-child(4){font-size: 2em; padding: 8px 10px;}
-    .msg:nth-child(5){font-size: 1.75em; padding: 7px 10px;}
-    .msg:nth-child(6){font-size: 1.5em; padding: 6px 10px;}
-    .msg:nth-child(7){font-size: 1em; padding: 4px 10px}
-    .msg:nth-child(8){font-size: 0.5em; padding: 3px 10px;}
-    .msg:nth-child(n+9){font-size: 0.25em;  padding: 2px 10px;}
+	body{font-family: 'Droid Sans', arial, serif;}
+	body div{margin: 0, padding: 0; position: absolute; top:0; left: 0; bottom:0; right:0; 
+	         background: -webkit-gradient(radial, 50% 50, 20, 50% 50, 800, from(#6C7E9E), to(#485472));}
+	header{width: 100%; color: #FFF; text-shadow: -1px  -1px #000; text-align: center;}
+  #input_section {padding: 10px 0px; margin: 0px; width: 100%; position: absolute; top: 70px; left:0; right: 0; 
+          background: -webkit-gradient(radial, 50% 50, 100, 50% 50, 600, from(#CCC), to(#EEE)); border-bottom: 5px solid #BBB;}
+    #input_section h1{position: absolute; top: 30px; right: 20px;}
+    #input_section div{width: 100%; padding: 0px 0px height: 80px;}
+    #input_section .description{display:block; font-weight: bold; text-shadow: 1px 1px #EEE;}
+    #input_section span{ margin-left: 20px; padding: 6px 0px; vertical-align: bottom;}
+    #input_section .large_inputs {font-size: 18px; padding: 10px; font-weight: bold; margin: 0px 3px;}
+    #input_section #voice_input{width: 500px;}
+  #info{position: absolute; top: 170px; height: 20px; padding: 0px 20px; text-shadow: -1px -1px #AAA; color: #EEE; left: 0; right: 0; background: #CCC;}
+  #room{position: absolute; top: 180px; left:0; right:0; bottom: 0;}
+  .msg{display:block; clear: both; padding: 10px 20px; margin: 10px; border-radius: 10px; background-color: #A4C639; -webkit-box-shadow: -1px -1px 4px #333; font-size: 3em; 
+	         background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EEE), to(#CCC), color-stop(.6,#FFF))}
+    .msg:nth-child(4){font-size: 2em; padding: 8px 20px; border-radius: 8px;}
+    .msg:nth-child(5){font-size: 1.75em; padding: 7px 20px; border-radius: 7px;}
+    .msg:nth-child(6){font-size: 1.5em; padding: 6px 20px; border-radius: 6px;}
+    .msg:nth-child(7){font-size: 1em; padding: 4px 20px; border-radius: 4px;}
+    .msg:nth-child(8){font-size: 0.5em; padding: 3px 20px; border-radius: 3px;}
+    .msg:nth-child(n+9){font-size: 0.25em;  padding: 2px 20px; border-radius: 2px;}
     .msg:nth-child(n+20){display:none;}
     
   </style>
@@ -46,13 +48,14 @@
       <h1>&lt;input speech x-webkit-speech&gt; Demo (Chrome 8+ Only)</h1>
     </header>
     <section id="input_section">
-      <h1>Voice Chat Room</h1>
-      <span class="description">Leave your name, click the microphone, and say something to begin.</span>
-      Name: <input type="text" id="name_input" class="large_inputs"/> Message: <input id="voice_input" class="large_inputs" speech x-webkit-speech onwebkitspeechchange="thurloat.voiceChat.postData(document.getElementById('name_input').value, this.value);";>
-      <input type="hidden" id="latest_msg" value="0"/>
+      <h1>Voice Chat Room</h1>    
+          <span class="description">Leave your name, click the microphone, and say something! If you can't see the mic, download a <a href="http://www.chromium.org/getting-involved/dev-channel">better browser</a>. source available on <a href="https://github.com/thurloat/input-x-webkit-speech">GitHub</a>!</span>
+          <span>
+          Name: <input type="text" id="name_input" class="large_inputs"/> Message: <input id="voice_input" class="large_inputs" speech x-webkit-speech onwebkitspeechchange="thurloat.voiceChat.postData(document.getElementById('name_input').value, this.value);";>
+          </span>
+          <input type="hidden" id="latest_msg" value="0"/>
     </section>
     <section id="info"></section>
-
     <section id="room">
       <hr id="starting_message" />
     </section>
