@@ -48,7 +48,6 @@
       <h1>&lt;input speech x-webkit-speech&gt; Demo (Chrome 8+ Only)</h1>
     </header>
     <section id="input_section">
-      <h1>Voice Chat Room</h1>    
           <span class="description">Leave your name, click the microphone, and say something! If you can't see the mic, download a <a href="http://www.chromium.org/getting-involved/dev-channel">better browser</a>. source available on <a href="https://github.com/thurloat/input-x-webkit-speech">GitHub</a>!</span>
           <span>
           Name: <input type="text" id="name_input" class="large_inputs"/> Message: <input id="voice_input" class="large_inputs" speech x-webkit-speech onwebkitspeechchange="thurloat.voiceChat.postData(document.getElementById('name_input').value, this.value);";>
