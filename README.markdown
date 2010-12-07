@@ -1,8 +1,10 @@
 This is a demo app for &lt;input x-webkit-speech&gt; found in Chrome 8+
-JS is Compiled using Google Closure Library / Compiler, Backend written on App Engine
 
 ----
 ## To Compile
+
+JS is Compiled using Google Closure Library / Compiler, Backend written on App Engine
+
     closurebuilder.py --root=~/closure/lib/ \
                   --root=js/ \
                   --namespace="thurloat.voiceChat" \
