@@ -1,5 +1,4 @@
-This is a demo app for <input x-webkit-speech> found in Chrome 8+
-
+This is a demo app for &lt;input x-webkit-speech&gt; found in Chrome 8+
 JS is Compiled using Google Closure Library / Compiler, Backend written on App Engine
 
 ----
